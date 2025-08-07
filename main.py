@@ -31,6 +31,9 @@ JWT_SECRET = os.getenv("JWT_SECRET", "binaural-beats-secret-key-change-in-produc
 SAMPLE_RATE = 44100
 BUFFER_SIZE = 1024
 
+# Track startup time for health checks
+startup_time = time.time()
+
 # Data Models
 class BinauralConfig(BaseModel):
     carrier_freq: float = Field(ge=40, le=1000, description="Base frequency in Hz")
@@ -580,12 +583,29 @@ async def get_frontend():
 @app.get("/health")
 async def health_check():
     """Health check endpoint for Railway"""
-    return {
-        "status": "healthy",
-        "timestamp": datetime.now().isoformat(),
-        "active_sessions": len(session_manager.sessions),
-        "version": "1.0.0"
-    }
+    try:
+        # Basic health indicators
+        health_data = {
+            "status": "healthy",
+            "timestamp": datetime.now().isoformat(),
+            "active_sessions": len(session_manager.sessions),
+            "active_connections": len(session_manager.active_connections),
+            "version": "1.0.0",
+            "environment": os.getenv("ENVIRONMENT", "unknown"),
+            "port": os.getenv("PORT", "8000"),
+            "uptime": time.time() - startup_time if 'startup_time' in globals() else 0
+        }
+        
+        logger.info(f"Health check: {health_data['status']}")
+        return health_data
+        
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        return {
+            "status": "unhealthy",
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
 
 @app.get("/auth/demo-token")
 async def get_demo_token():
@@ -752,16 +772,20 @@ async def general_exception_handler(request, exc):
 @app.on_event("startup")
 async def startup_event():
     """Application startup"""
-    logger.info("Binaural Beats Generator MVP starting up...")
-    logger.info(f"Sample rate: {SAMPLE_RATE}Hz, Buffer size: {BUFFER_SIZE}")
+    logger.info("🎵 Binaural Beats Generator MVP starting up...")
+    logger.info(f"📊 Sample rate: {SAMPLE_RATE}Hz, Buffer size: {BUFFER_SIZE}")
+    logger.info(f"🌐 Port: {os.getenv('PORT', 8000)}")
+    logger.info(f"🔒 JWT Secret configured: {'Yes' if JWT_SECRET else 'No'}")
+    logger.info("✅ Application startup complete!")
 
 @app.on_event("shutdown")
 async def shutdown_event():
     """Application shutdown"""
-    logger.info("Shutting down Binaural Beats Generator MVP...")
+    logger.info("🛑 Shutting down Binaural Beats Generator MVP...")
     # End all active sessions
     for session_id in list(session_manager.sessions.keys()):
         session_manager.end_session(session_id)
+    logger.info("✅ Shutdown complete!")
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
