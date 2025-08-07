@@ -1,63 +1,39 @@
-# Multi-stage build for Railway deployment
-FROM python:3.11-slim as builder
-
-# Set build arguments and env vars in one layer
-ARG DEBIAN_FRONTEND=noninteractive
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
-
-# Install system dependencies and cleanup in one layer
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
-
-# Create virtual environment
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Cache dependencies layer
-COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    rm -rf ~/.cache/pip/*
-
-# Production stage - Using slim for smaller image
+# Optimized Dockerfile for local development
 FROM python:3.11-slim
 
-# Set production env vars
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PATH="/opt/venv/bin:$PATH" \
-    PORT=8000
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# Install runtime deps and create user in one layer
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
     curl \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean \
-    && useradd --create-home --shell /bin/bash --user-group python \
-    && mkdir -p /app && chown python:python /app
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy virtual env and set workdir
-COPY --from=builder /opt/venv /opt/venv
+# Create app directory
 WORKDIR /app
 
-# Copy app code and set permissions
-COPY --chown=python:python . .
+# Copy requirements first (for better caching)
+COPY requirements.txt .
 
-# Switch to non-root user (security best practice)
-USER python
+# Install Python dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Health check with retry strategy
+# Copy application code
+COPY main.py .
+
+# Create non-root user
+RUN useradd --create-home --shell /bin/bash appuser && \
+    chown -R appuser:appuser /app
+USER appuser
+
+# Expose port
+EXPOSE 8000
+
+# Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${PORT}/health || exit 1
+    CMD curl -f http://localhost:8000/health || exit 1
 
-# Expose port (Railway will override this)
-EXPOSE ${PORT}
-
-# Use shell form for env var expansion
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT} --workers 1 --proxy-headers --forwarded-allow-ips='*'
+# Start command with environment variable support
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000} --reload"]
