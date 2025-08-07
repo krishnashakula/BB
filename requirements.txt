@@ -1,0 +1,37 @@
+# Production dependencies for Binaural Beats Generator MVP
+# Optimized for Railway deployment with security and performance focus
+
+# Core Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+
+# Audio Processing
+numpy==1.26.2
+scipy==1.11.4
+
+# Authentication & Security
+PyJWT==2.8.0
+python-multipart==0.0.6
+
+# Data Validation
+pydantic==2.5.0
+
+# HTTP Client (for health checks)
+httpx==0.25.2
+
+# Logging & Monitoring
+structlog==23.2.0
+
+# Environment & Configuration
+python-dotenv==1.0.0
+
+# ASGI Server Production Optimization
+gunicorn==21.2.0
+
+# Optional: Redis for session management (if Railway Redis is available)
+# redis==5.0.1
+
+# Development & Testing (comment out for production)
+# pytest==7.4.3
+# pytest-asyncio==0.21.1

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BinauralFlow - Transform Your Mind with Science-Backed Audio</title>
+    <meta name="description" content="Premium binaural beats for focus, relaxation, and peak performance. Scientifically-validated frequencies for optimal brainwave states.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BinauralFlow - Science-Backed Audio for Peak Performance">
+    <meta property="og:description" content="Premium binaural beats generator with real-time visualization and scientifically-validated presets.">
+    <meta property="og:image" content="/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Performance & SEO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cal+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2L2 7v10c0 5.55 3.84 9.95 9 11 5.16-1.05 9-5.45 9-11V7l-10-5z'/></svg>">
+    
+    <!-- Tailwind CSS with Enterprise Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        // Neuroscience-inspired brainwave colors
+                        delta: '#1e3a8a',
+                        theta: '#7c3aed', 
+                        alpha: '#059669',
+                        beta: '#ea580c',
+                        gamma: '#dc2626',
+                        
+                        // Premium dark theme palette
+                        background: '#0f0f23',
+                        surface: '#1a1a2e',
+                        'surface-alt': '#16213e',
+                        'surface-elevated': '#2a2d47',
+                        
+                        // Glassmorphism
+                        'glass-bg': 'rgba(255, 255, 255, 0.05)',
+                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+                        'glass-strong': 'rgba(255, 255, 255, 0.1)',
+                    },
+                    fontFamily: {
+                        'display': ['Cal Sans', 'Inter', 'sans-serif'],
+                        'body': ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '88': '22rem',
+                        '128': '32rem',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'ripple': 'ripple 1s ease-out',
+                        'breathe': 'breathe 4s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'scale-in': 'scaleIn 0.2s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.6)' },
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(0)', opacity: '1' },
+                            '100%': { transform: 'scale(4)', opacity: '0' },
+                        },
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Premium Glassmorphism Effects */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .glass-subtle {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        /* Premium Text Effects */
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        
+        /* Advanced Background Effects */
+        .bg-gradient-radial {
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, rgba(124, 58, 237, 0.1) 25%, transparent 70%);
+        }
+        
+        .noise-bg {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            animation: pulse-bg 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-bg {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* Enhanced Audio Visualizer */
+        .visualizer-bar {
+            transition: height 0.1s ease-out, background-color 0.2s ease;
+            background: linear-gradient(to top, #6366f1, #8b5cf6, #06b6d4);
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .visualizer-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.2));
+            border-radius: inherit;
+        }
+        
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(139, 92, 246, 0.6));
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8));
+        }
+        
+        /* Enhanced Ripple Effect */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .ripple::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        
+        .ripple:active::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Interactive Elements */
+        .preset-filter.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            transform: scale(1.02);
+        }
+        
+        .waveform-btn.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .waveform-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+        
+        /* Premium Sliders */
+        .slider {
+            background: linear-gradient(to right, #6366f1 0%, #6366f1 var(--value, 50%), #374151 var(--value, 50%), #374151 100%);
+            transition: all 0.2s ease;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(99, 102, 241, 0.4);
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes slide-in {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-slide-in {
+            animation: slide-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Utility Classes */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .backdrop-blur-xl {
+            backdrop-filter: blur(24px);
+        }
+        
+        /* Focus States for Accessibility */
+        .focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+        }
+        
+        /* Loading States */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: loading-shimmer 1.5s infinite;
+        }
+        
+        @keyframes loading-shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Performance Optimizations */
+        .will-change-transform {
+            will-change: transform;
+        }
+        
+        .gpu-accelerated {
+            transform: translate3d(0, 0, 0);
+        }
+        
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-slate-100 font-body overflow-x-hidden antialiased">
+    <!-- Skip to Content for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-indigo-600 text-white px-4 py-2 rounded-lg z-50">
+        Skip to main content
+    </a>
+    
+    <!-- Background Effects -->
+    <div class="fixed inset-0 noise-bg opacity-50 pointer-events-none"></div>
+    <div class="fixed inset-0 bg-gradient-radial pointer-events-none"></div>
+    
+    <!-- Floating Particles Background -->
+    <div id="particles" class="fixed inset-0 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="relative z-50 px-6 py-4" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center will-change-transform">
+                    <i data-lucide="brain-circuit" class="w-6 h-6 text-white" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-display font-semibold text-gradient">BinauralFlow</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-slate-300 hover:text-white transition-colors duration-200 focus-ring rounded-md px-2 py-1">Features</a>
+                <a href="#science" class="text-slate-300 hover:text-white transition-colors duration-200 focus-ring rounded-md px-2 py-1">Science</a>
+                <a href="#presets" class="text-slate-300 hover:text-white transition-colors duration-200 focus-ring rounded-md px-2 py-1">Presets</a>
+                <button class="glass px-6 py-2 rounded-xl hover:bg-white/10 transition-all duration-300 focus-ring">
+                    Sign In
+                </button>
+            </div>
+            
+            <button class="md:hidden p-2 rounded-lg glass focus-ring" aria-label="Toggle mobile menu">
+                <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative z-40 px-6 py-20 text-center" id="hero">
+        <div class="max-w-4xl mx-auto">
+            <!-- Animated brain visualization -->
+            <div class="mb-12 relative" aria-hidden="true">
+                <div class="w-32 h-32 mx-auto relative">
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-pulse-slow opacity-20 gpu-accelerated"></div>
+                    <div class="absolute inset-2 rounded-full glass-strong flex items-center justify-center animate-breathe gpu-accelerated">
+                        <i data-lucide="brain-circuit" class="w-16 h-16 text-indigo-400"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight text-shadow">
+                Transform Your Mind with 
+                <span class="text-gradient text-glow">Science-Backed Audio</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Premium binaural beats for focus, relaxation, and peak performance. 
+                Scientifically-validated frequencies for optimal brainwave states.
+            </p>
+            
+            <!-- Social Proof -->
+            <div class="flex flex-wrap justify-center items-center gap-8 mb-12 text-sm text-slate-400" role="list">
+                <div class="flex items-center gap-2" role="listitem">
+                    <i data-lucide="users" class="w-4 h-4" aria-hidden="true"></i>
+                    <span>10,000+ professionals</span>
+                </div>
+                <div class="flex items-center gap-2" role="listitem">
+                    <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i>
+                    <span>Privacy certified</span>
+                </div>
+                <div class="flex items-center gap-2" role="listitem">
+                    <i data-lucide="zap-off" class="w-4 h-4" aria-hidden="true"></i>
+                    <span>Ad-free</span>
+                </div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                    onclick="showApp()" 
+                    class="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 overflow-hidden ripple focus-ring will-change-transform"
+                    aria-describedby="cta-description"
+                >
+                    <span class="relative z-10">Start Free Session</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+                <button class="px-8 py-4 glass rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 focus-ring">
+                    View Scientific Research
+                </button>
+            </div>
+            
+            <p id="cta-description" class="sr-only">
+                Launch the binaural beats audio studio to start your personalized session
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Application (Initially Hidden) -->
+    <main id="app" class="hidden relative z-40 px-6 py-12" role="main">
+        <div class="max-w-7xl mx-auto">
+            <!-- App Header -->
+            <header class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl font-display font-bold mb-2">Audio Studio</h2>
+                    <p class="text-slate-400">Create your perfect brainwave state</p>
+                </div>
+                <button 
+                    onclick="showLanding()" 
+                    class="glass px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 focus-ring"
+                    aria-label="Return to landing page"
+                >
+                    <i data-lucide="arrow-left" class="w-5 h-5" aria-hidden="true"></i>
+                </button>
+            </header>
+            
+            <!-- Main App Grid -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Audio Player Column -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- Audio Player Card -->
+                    <section class="glass-strong rounded-2xl p-8" aria-labelledby="audio-player-title">
+                        <div class="text-center mb-8">
+                            <h3 id="audio-player-title" class="text-xl font-semibold mb-2" id="currentPreset">Focus Enhancement (40Hz)</h3>
+                            <p class="text-slate-400" id="presetDescription">Gamma waves for peak concentration and cognitive performance</p>
+                        </div>
+                        
+                        <!-- Circular Audio Visualizer -->
+                        <div class="relative mb-8" role="img" aria-label="Audio visualizer and progress indicator">
+                            <div class="w-64 h-64 mx-auto relative">
+                                <!-- Progress Ring -->
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
+                                    <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/>
+                                    <circle 
+                                        id="progressRing" 
+                                        cx="50" 
+                                        cy="50" 
+                                        r="45" 
+                                        stroke="url(#gradient)" 
+                                        stroke-width="3" 
+                                        fill="none" 
+                                        stroke-dasharray="283" 
+                                        stroke-dashoffset="283" 
+                                        stroke-linecap="round"
+                                    />
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#6366f1"/>
+                                            <stop offset="50%" style="stop-color:#8b5cf6"/>
+                                            <stop offset="100%" style="stop-color:#06b6d4"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                
+                                <!-- Audio Visualizer Bars -->
+                                <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                                    <div class="flex items-end gap-1 h-20" id="visualizer">
+                                        <!-- Bars will be generated by JavaScript -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button 
+                                        id="playButton" 
+                                        onclick="togglePlay()" 
+                                        class="w-20 h-20 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-2xl focus-ring will-change-transform"
+                                        aria-label="Play/Pause audio session"
+                                    >
+                                        <i data-lucide="play" class="w-8 h-8 text-white ml-1" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Audio Controls -->
+                        <div class="space-y-6">
+                            <!-- Time Display -->
+                            <div class="flex items-center justify-between text-sm text-slate-400" role="timer">
+                                <span id="currentTime" aria-label="Current time">00:00</span>
+                                <span id="totalTime" aria-label="Total duration">30:00</span>
+                            </div>
+                            
+                            <!-- Volume Control -->
+                            <div class="space-y-2">
+                                <label for="volumeSlider" class="text-sm font-medium text-slate-300">Volume</label>
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="volume-1" class="w-4 h-4 text-slate-400" aria-hidden="true"></i>
+                                    <input 
+                                        type="range" 
+                                        min="0" 
+                                        max="100" 
+                                        value="75" 
+                                        class="flex-1 h-2 bg-slate-700 rounded-lg appearance-none slider focus-ring" 
+                                        id="volumeSlider"
+                                        aria-label="Volume control"
+                                    >
+                                    <i data-lucide="volume-2" class="w-4 h-4 text-slate-400" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Secondary Controls -->
+                            <div class="flex items-center justify-center gap-4" role="group" aria-label="Audio controls">
+                                <button class="p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 focus-ring" title="Loop" aria-label="Toggle loop">
+                                    <i data-lucide="repeat" class="w-5 h-5" aria-hidden="true"></i>
+                                </button>
+                                <button class="p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 focus-ring" title="Timer" aria-label="Set timer">
+                                    <i data-lucide="timer" class="w-5 h-5" aria-hidden="true"></i>
+                                </button>
+                                <button class="p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 focus-ring" title="Settings" aria-label="Open settings">
+                                    <i data-lucide="settings" class="w-5 h-5" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Custom Generator -->
+                    <section class="glass-strong rounded-2xl p-6" aria-labelledby="custom-generator-title">
+                        <h3 id="custom-generator-title" class="text-lg font-semibold mb-6 flex items-center gap-2">
+                            <i data-lucide="sliders" class="w-5 h-5" aria-hidden="true"></i>
+                            Custom Beat Generator
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Carrier Frequency -->
+                            <div class="space-y-3">
+                                <label for="carrierSlider" class="text-sm font-medium text-slate-300">Carrier Frequency</label>
+                                <div class="glass rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs text-slate-400">40Hz</span>
+                                        <span class="text-sm font-mono text-indigo-400" id="carrierValue">200Hz</span>
+                                        <span class="text-xs text-slate-400">1000Hz</span>
+                                    </div>
+                                
+                                    <input 
+                                        type="range" 
+                                        min="40" 
+                                        max="1000" 
+                                        value="200" 
+                                        class="w-full h-2 bg-slate-700 rounded-lg appearance-none slider focus-ring" 
+                                        id="carrierSlider"
+                                        aria-label="Carrier frequency control"
+                                        aria-describedby="carrier-description"
+                                    >
+                                </div>
+                                <p id="carrier-description" class="text-xs text-slate-500 sr-only">
+                                    Base frequency for binaural beat generation, range 40-1000Hz
+                                </p>
+                            </div>
+                            
+                            <!-- Beat Frequency -->
+                            <div class="space-y-3">
+                                <label for="beatSlider" class="text-sm font-medium text-slate-300">Beat Frequency</label>
+                                <div class="glass rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs text-slate-400">0.5Hz</span>
+                                        <span class="text-sm font-mono text-purple-400" id="beatValue">10Hz</span>
+                                        <span class="text-xs text-slate-400">40Hz</span>
+                                    </div>
+                                    <input 
+                                        type="range" 
+                                        min="0.5" 
+                                        max="40" 
+                                        value="10" 
+                                        step="0.5" 
+                                        class="w-full h-2 bg-slate-700 rounded-lg appearance-none slider focus-ring" 
+                                        id="beatSlider"
+                                        aria-label="Beat frequency control"
+                                        aria-describedby="beat-description"
+                                    >
+                                    
+                                    <!-- Brainwave Zone Indicators -->
+                                    <div class="flex justify-between mt-2 text-xs" role="group" aria-label="Brainwave frequency zones">
+                                        <span class="text-blue-400" title="0.5-4Hz: Deep sleep, healing">Delta</span>
+                                        <span class="text-purple-400" title="4-8Hz: Meditation, creativity">Theta</span>
+                                        <span class="text-green-400" title="8-13Hz: Relaxation, focus">Alpha</span>
+                                        <span class="text-orange-400" title="13-30Hz: Concentration, alertness">Beta</span>
+                                        <span class="text-red-400" title="30-40Hz: Enhanced cognition">Gamma</span>
+                                    </div>
+                                </div>
+                                <p id="beat-description" class="text-xs text-slate-500 sr-only">
+                                    Binaural beat frequency that determines brainwave state, range 0.5-40Hz
+                                </p>
+                            </div>
+                            
+                            <!-- Waveform Type -->
+                            <div class="space-y-3">
+                                <fieldset>
+                                    <legend class="text-sm font-medium text-slate-300 mb-2">Waveform Type</legend>
+                                    <div class="grid grid-cols-2 gap-2" role="radiogroup">
+                                        <button 
+                                            class="waveform-btn active p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 text-sm focus-ring" 
+                                            data-waveform="sine"
+                                            role="radio"
+                                            aria-checked="true"
+                                            aria-label="Sine wave"
+                                        >
+                                            Sine
+                                        </button>
+                                        <button 
+                                            class="waveform-btn p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 text-sm focus-ring" 
+                                            data-waveform="square"
+                                            role="radio"
+                                            aria-checked="false"
+                                            aria-label="Square wave"
+                                        >
+                                            Square
+                                        </button>
+                                        <button 
+                                            class="waveform-btn p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 text-sm focus-ring" 
+                                            data-waveform="sawtooth"
+                                            role="radio"
+                                            aria-checked="false"
+                                            aria-label="Sawtooth wave"
+                                        >
+                                            Sawtooth
+                                        </button>
+                                        <button 
+                                            class="waveform-btn p-3 glass rounded-lg hover:bg-white/10 transition-all duration-300 text-sm focus-ring" 
+                                            data-waveform="triangle"
+                                            role="radio"
+                                            aria-checked="false"
+                                            aria-label="Triangle wave"
+                                        >
+                                            Triangle
+                                        </button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            
+                            <!-- Duration -->
+                            <div class="space-y-3">
+                                <label for="durationSlider" class="text-sm font-medium text-slate-300">Duration</label>
+                                <div class="glass rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs text-slate-400">5 min</span>
+                                        <span class="text-sm font-mono text-cyan-400" id="durationValue">30 min</span>
+                                        <span class="text-xs text-slate-400">60 min</span>
+                                    </div>
+                                    <input 
+                                        type="range" 
+                                        min="5" 
+                                        max="60" 
+                                        value="30" 
+                                        step="5" 
+                                        class="w-full h-2 bg-slate-700 rounded-lg appearance-none slider focus-ring" 
+                                        id="durationSlider"
+                                        aria-label="Session duration control"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button 
+                            onclick="generateCustom()" 
+                            class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold hover:scale-105 transition-all duration-300 focus-ring will-change-transform"
+                            aria-describedby="generate-description"
+                        >
+                            Generate Custom Beat
+                        </button>
+                        <p id="generate-description" class="sr-only">
+                            Create a custom binaural beat using the selected parameters
+                        </p>
+                    </section>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="space-y-6" aria-label="Preset library and session information">
+                    
+                    <!-- Preset Library -->
+                    <section class="glass-strong rounded-2xl p-6" aria-labelledby="preset-library-title">
+                        <h3 id="preset-library-title" class="text-lg font-semibold mb-4 flex items-center gap-2">
+                            <i data-lucide="library" class="w-5 h-5" aria-hidden="true"></i>
+                            Preset Library
+                        </h3>
+                        
+                        <!-- Filter Tabs -->
+                        <div class="flex gap-1 mb-4 p-1 glass rounded-lg" role="tablist" aria-label="Preset categories">
+                            <button 
+                                class="preset-filter active flex-1 px-3 py-2 text-xs rounded-md transition-all duration-300 focus-ring" 
+                                data-filter="all"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="preset-content"
+                            >
+                                All
+                            </button>
+                            <button 
+                                class="preset-filter flex-1 px-3 py-2 text-xs rounded-md transition-all duration-300 focus-ring" 
+                                data-filter="focus"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="preset-content"
+                            >
+                                Focus
+                            </button>
+                            <button 
+                                class="preset-filter flex-1 px-3 py-2 text-xs rounded-md transition-all duration-300 focus-ring" 
+                                data-filter="relax"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="preset-content"
+                            >
+                                Relax
+                            </button>
+                            <button 
+                                class="preset-filter flex-1 px-3 py-2 text-xs rounded-md transition-all duration-300 focus-ring" 
+                                data-filter="sleep"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="preset-content"
+                            >
+                                Sleep
+                            </button>
+                        </div>
+                        
+                        <!-- Preset Cards -->
+                        <div 
+                            class="space-y-3" 
+                            id="presetList"
+                            role="tabpanel"
+                            aria-labelledby="preset-library-title"
+                            id="preset-content"
+                        >
+                            <!-- Presets will be generated by JavaScript -->
+                        </div>
+                    </section>
+                    
+                    <!-- Session Stats -->
+                    <section class="glass-strong rounded-2xl p-6" aria-labelledby="session-stats-title">
+                        <h3 id="session-stats-title" class="text-lg font-semibold mb-4 flex items-center gap-2">
+                            <i data-lucide="activity" class="w-5 h-5" aria-hidden="true"></i>
+                            Today's Session
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Total Time</span>
+                                <span class="font-semibold" aria-label="Total session time today">2h 15m</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Sessions</span>
+                                <span class="font-semibold" aria-label="Number of sessions today">3</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Streak</span>
+                                <span class="font-semibold" aria-label="Daily streak">7 days</span>
+                            </div>
+                            
+                            <!-- Progress Ring -->
+                            <div class="relative w-16 h-16 mx-auto mt-4" role="img" aria-label="Daily goal progress: 75% complete">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
+                                    <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.1)" stroke-width="8" fill="none"/>
+                                    <circle 
+                                        cx="50" 
+                                        cy="50" 
+                                        r="40" 
+                                        stroke="#10b981" 
+                                        stroke-width="8" 
+                                        fill="none" 
+                                        stroke-dasharray="251" 
+                                        stroke-dashoffset="63" 
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center text-sm font-bold" aria-hidden="true">75%</div>
+                            </div>
+                            
+                            <p class="text-xs text-center text-slate-400">Daily goal progress</p>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section id="features" class="relative z-40 px-6 py-20" aria-labelledby="features-title">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 id="features-title" class="text-4xl md:text-5xl font-display font-bold mb-6">
+                    Scientifically <span class="text-gradient">Engineered</span>
+                </h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+                    Our binaural beats are precisely calibrated using neuroscience research 
+                    to optimize your brainwave states for peak performance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8" role="list">
+                <article class="glass-strong rounded-2xl p-8 hover:scale-105 transition-all duration-300 will-change-transform" role="listitem">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                        <i data-lucide="brain" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Precision Frequencies</h3>
+                    <p class="text-slate-400">
+                        ±0.1Hz frequency accuracy ensures optimal brainwave entrainment for maximum effectiveness.
+                    </p>
+                </article>
+                
+                <article class="glass-strong rounded-2xl p-8 hover:scale-105 transition-all duration-300 will-change-transform" role="listitem">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                        <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Real-time Visualization</h3>
+                    <p class="text-slate-400">
+                        Live audio analysis and brainwave state visualization provide immediate feedback on your session.
+                    </p>
+                </article>
+                
+                <article class="glass-strong rounded-2xl p-8 hover:scale-105 transition-all duration-300 will-change-transform" role="listitem">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Research Backed</h3>
+                    <p class="text-slate-400">
+                        Every preset is based on peer-reviewed neuroscience research and validated effectiveness studies.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-40 px-6 py-12 border-t border-white/10" role="contentinfo">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center" aria-hidden="true">
+                            <i data-lucide="brain-circuit" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <span class="text-lg font-display font-semibold text-gradient">BinauralFlow</span>
+                    </div>
+                    <p class="text-slate-400 text-sm">
+                        Transform your mind with scientifically-validated binaural beats.
+                    </p>
+                </div>
+                
+                <nav aria-labelledby="product-links">
+                    <h4 id="product-links" class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#features" class="hover:text-white transition-colors focus-ring rounded px-1">Features</a></li>
+                        <li><a href="#presets" class="hover:text-white transition-colors focus-ring rounded px-1">Presets</a></li>
+                        <li><a href="#api" class="hover:text-white transition-colors focus-ring rounded px-1">API</a></li>
+                    </ul>
+                </nav>
+                
+                <nav aria-labelledby="research-links">
+                    <h4 id="research-links" class="font-semibold mb-4">Research</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#studies" class="hover:text-white transition-colors focus-ring rounded px-1">Scientific Studies</a></li>
+                        <li><a href="#guide" class="hover:text-white transition-colors focus-ring rounded px-1">Brainwave Guide</a></li>
+                        <li><a href="#data" class="hover:text-white transition-colors focus-ring rounded px-1">Effectiveness Data</a></li>
+                    </ul>
+                </nav>
+                
+                <nav aria-labelledby="support-links">
+                    <h4 id="support-links" class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#help" class="hover:text-white transition-colors focus-ring rounded px-1">Help Center</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors focus-ring rounded px-1">Contact</a></li>
+                        <li><a href="#privacy" class="hover:text-white transition-colors focus-ring rounded px-1">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2024 BinauralFlow. Scientifically engineered for peak performance.</p>
+                <p class="mt-2">
+                    <a href="#accessibility" class="hover:text-white transition-colors focus-ring rounded px-1">Accessibility</a> • 
+                    <a href="#terms" class="hover:text-white transition-colors focus-ring rounded px-1">Terms</a> • 
+                    <a href="#privacy" class="hover:text-white transition-colors focus-ring rounded px-1">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Screen (Optional) -->
+    <div id="loading-screen" class="fixed inset-0 bg-background z-50 flex items-center justify-center loading-screen hidden">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mb-4 mx-auto"></div>
+            <p class="text-slate-300 font-medium">Initializing Audio Engine...</p>
+        </div>
+    </div>
+
+    <!-- Error Toast Container -->
+    <div id="toast-container" class="fixed top-6 right-6 z-50 space-y-4 pointer-events-none" aria-live="polite" aria-label="Notifications">
+        <!-- Toast notifications will be inserted here by JavaScript -->
+    </div>
+
+    <!-- Screen Reader Announcements -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true">
+        <!-- Screen reader announcements will be inserted here by JavaScript -->
+    </div>
+
+    <!-- JavaScript Application -->
+    <script src="binaural-beats-app.js" defer></script>
+    
+    <!-- Performance Monitoring (Optional) -->
+    <script>
+        // Basic performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page Load Performance:', {
+                        domContentLoaded: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
+                        loadComplete: perfData.loadEventEnd - perfData.loadEventStart,
+                        totalTime: perfData.loadEventEnd - perfData.fetchStart
+                    });
+                }, 0);
+            });
+        }
+    </script>
+
+    <!-- Service Worker Registration (Optional for PWA) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered:', registration))
+                    .catch(error => console.log('SW registration failed:', error));
+            });
+        }
+    </script>
+</body>
+</html>
