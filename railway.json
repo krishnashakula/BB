@@ -11,7 +11,7 @@
     "restartPolicyMaxRetries": 3,
     "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1",
     "healthcheckPath": "/health",
-    "healthcheckTimeout": 30
+    "healthcheckTimeout": 60
   },
   "environments": {
     "production": {
